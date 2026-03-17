@@ -1,48 +1,67 @@
 :root {
-  --bg: #f7f7fb;
-  --card: #ffffff;
-  --text: #111827;
-  --muted: #6b7280;
-  --accent: #2563eb;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
-
-* { box-sizing: border-box; }
-html,body,#root { height: 100%; margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-
+body {
+  background: #f5f7fb;
+  margin: 0;
+  padding: 20px;
+}
 .app {
-  min-height: 100vh;
-  background: var(--bg);
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+h1 {
+  margin-top: 0;
+  font-size: 22px;
+}
+.todo-form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 16px;
+  gap: 8px;
+  margin-bottom: 16px;
 }
-
-header h1 {
-  margin: 0 0 16px 0;
-  color: var(--text);
-  font-size: 28px;
+.todo-form input[type="text"] {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
 }
-
+.todo-form button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
 .todo-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 100%;
-  max-width: 520px;
 }
-
 .todo-item {
-  background: var(--card);
-  padding: 12px 16px;
-  border-radius: 8px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
-  box-shadow: 0 1px 2px rgba(15,23,42,0.04);
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
 }
-
-.todo-title {
-  color: var(--text);
-  font-size: 16px;
+.todo-item .left { display:flex; align-items:center; gap:10px; }
+.todo-item .text { font-size: 16px; }
+.todo-item.completed .text { text-decoration: line-through; opacity: .6; }
+.todo-item .actions button {
+  margin-left: 6px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+.edit-input {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
